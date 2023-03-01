@@ -42,14 +42,11 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRb.velocity = Vector2.up * jumpForce;
         }
+        playerRb.velocity = new Vector2(input * speed, playerRb.velocity.y);
         AnimationUpdate();
 
 
 
-    }
-    void FixedUpdate()
-    {
-        playerRb.velocity = new Vector2(input * speed, playerRb.velocity.y);
     }
     private void AnimationUpdate()
     {
